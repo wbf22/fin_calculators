@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" id="html" style="background-color: rgb(255, 255, 255); margin: 0px; padding: 0px; width: 100%;">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Investment Calculator</title>
+	<base target="_self">
+
+
+	<style>
+		#html {
+			background-color: rgb(255, 255, 255);
+			margin: 0px;
+			padding: 0px;
+		}
+
+		#header {
+			padding: 1rem;
+			margin: 0px;
+		}
+
+		#body {
+			margin: 0px;
+			padding: 0px;
+			min-height: 100vh;
+			font-family: Roboto;
+			color: rgb(136, 205, 148);
+			background-color: rgb(51, 51, 51);
+		}
+
+		#main_form {
+			padding: 0rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 40vw;
+		}
+
+		#element_d63ea53720a94a7b {
+			padding: 1rem;
+		}
+
+		#starting_amount_input {
+			padding: 1rem;
+			height: 1rem;
+			place-self: center start;
+			width: 10rem;
+		}
+
+		#element_dda42f80114f4b20 {
+			padding: 1rem;
+		}
+
+		#years_input {
+			padding: 1rem;
+			height: 1rem;
+			place-self: center start;
+			width: 10rem;
+		}
+
+		#element_ffa3b74a7d454892 {
+			padding: 0rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 40vw;
+		}
+
+		.input {
+			background-color: rgb(36, 36, 36);
+			border: 0px;
+			border-radius: 5px;
+			color: inherit;
+		}
+
+		.table_input {
+			background-color: rgb(36, 36, 36);
+			border: 0px;
+			color: inherit;
+			width: 100%;
+			box-sizing: border-box;
+			text-align: right;
+			padding: 1rem;
+		}
+
+		#element_9af5b2b1e7b04a51 {
+			padding: 1rem;
+		}
+
+		#return_rate_input {
+			padding: 1rem;
+			height: 1rem;
+			place-self: center start;
+			width: 10rem;
+		}
+
+		#element_d35ff45ea9d64b64 {
+			padding: 0rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 40vw;
+		}
+
+		#element_428421ce4c44442a {
+			padding: 1rem;
+		}
+
+		#element_2f696776d4d54f15 {
+			padding: 0rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 40vw;
+		}
+
+		#element_3a3a62b0bc9745d6 {
+			padding: 1rem;
+		}
+
+		#element_a5035ca27d934557 {
+			padding: 1rem;
+		}
+
+		#compound_select {
+			height: 1rem;
+			place-self: center start;
+			width: 10rem;
+			line-height: 1rem;
+			padding: 1rem;
+			box-sizing: inherit;
+		}
+
+		#contribution_schedule_table {
+			padding: 1rem;
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		#contribution_schedule_body {
+			padding: 1rem;
+		}
+
+		#element_6dcd66c32edf4c68 {
+			padding: 1rem;
+		}
+
+		#contribute_input {
+			height: 1rem;
+			place-self: center start;
+			width: 10rem;
+			line-height: 1rem;
+			padding: 1rem;
+			box-sizing: inherit;
+		}
+
+		#element_2559dff06b13457f {
+			padding: 1rem;
+		}
+
+		#element_f1cad8d8bf9b43af {
+			padding: 1rem;
+		}
+
+		#element_183c540131fa44a2 {
+			padding: 0rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 40vw;
+		}
+
+		#con_schedule_row {
+			padding: 1rem;
+		}
+
+		#element_00ad17afbc5646f9 {
+			padding: 1rem;
+		}
+
+		#element_16d9d461243a401b {
+			padding: 1rem;
+		}
+
+		.table_header {
+			text-align: left;
+			background-color: rgb(99, 49, 114);
+			border: 1px solid;
+			margin: 0px;
+			padding: 1rem;
+		}
+
+		.table_cell {
+			text-align: right;
+			border: 1px solid;
+			padding: 0.5rem;
+		}
+
+		.table_input_cell {
+			padding: 0;
+		}
+
+
+		#contribution_table_section {
+			display: flex;
+			flex-direction: column;
+		}
+
+		#element_70d86a58ad32498f {
+			margin: 1rem;
+			background-color: rgb(99, 49, 114);
+			border: 1px solid;
+			padding: 0rem;
+			width: 2rem;
+			height: 2rem;
+			text-align: center;
+			line-height: 2rem;
+			align-self: center;
+		}
+
+		#element_0368dc1ef42a4d2d {
+			font-size: 1.5rem;
+			padding: 0rem 1rem;
+		}
+
+		#calculation_type_select {
+			height: 1rem;
+			place-self: center start;
+			width: 10rem;
+			line-height: 1rem;
+			padding: 1rem;
+			box-sizing: inherit;
+		}
+
+		#element_e7c2a3f04d2a4495 {
+			padding: 1rem;
+		}
+
+		#element_6cceff56758b4406 {
+			padding: 1rem;
+		}
+
+		#element_8daebdfd5b274754 {
+			padding: 0rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 40vw;
+			background-color: rgb(99, 49, 114);
+			border: 1px solid;
+		}
+
+		#element_fbb8f750cbad4995 {
+			padding: 1rem;
+		}
+
+		#element_7aa1db97bb1c4d8c {
+			padding: 1rem;
+		}
+
+		#element_ee6f8b28124e4802 {
+			padding: 1rem;
+		}
+
+		#results_section {
+			padding: 1rem;
+		}
+
+		#input_section {
+			padding: 1rem;
+			border: 1px;
+		}
+
+		#main_section {
+			padding: 1rem;
+			display: flex;
+			flex-direction: row;
+		}
+
+		#result_table_body {
+			padding: 1rem;
+		}
+
+		#element_4ee12b7c59c649d8 {
+			padding: 1rem;
+		}
+
+		#element_ca2df35ea8c34580 {
+			padding: 1rem;
+		}
+
+		#element_1905bfe8ed8c4056 {
+			padding: 1rem;
+		}
+
+		#element_0bab3ccaf87e459a {
+			padding: 1rem;
+			width: 36vw;
+			border-collapse: collapse;
+			align-self: start;
+			margin: 1rem 0rem 0rem;
+		}
+
+		#element_991261ae5ee743dc {
+			padding: 1rem;
+			margin: 0px;
+			height: 3.3rem;
+			line-height: 3.4rem;
+			background-color: rgb(99, 49, 114);
+			border: 1px solid;
+		}
+
+		#element_14056d0208494bac {
+			padding: 1rem;
+		}
+
+		#element_7097afad898e4508 {
+			padding: 1rem;
+		}
+
+		#results_table {
+			padding: 0rem 1rem;
+			width: 36vw;
+		}
+
+		#element_bf00446d90654b6b {
+			padding: 1rem;
+		}
+
+		#element_6065d01935a94cff {
+			padding: 1rem;
+		}
+
+		#element_3dc24921ade447b2 {
+			padding: 1rem;
+			text-align: right;
+		}
+
+		#element_fc02f3786b084006 {
+			padding: 1rem;
+		}
+
+		#element_25f4294797034abf {
+			padding: 1rem;
+			text-align: right;
+		}
+
+		#element_ba47f496a4844036 {
+			padding: 1rem;
+		}
+
+		#element_c30730c548974a6c {
+			padding: 1rem;
+		}
+
+		#element_b73dc1e562184dbb {
+			padding: 1rem;
+			text-align: right;
+		}
+
+		#element_497c98c3b24949e0 {
+			padding: 1rem;
+		}
+
+		#element_6217b882403b4594 {
+			height: 2px;
+			background-color: rgb(135, 166, 157);
+		}
+
+		#title {
+			margin: 0px;
+			padding: 0px;
+			font-size: 3rem;
+		}
+	</style>
+	<link rel="preconnect" href="https://fonts.googleapis.com" id="preconnect1">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" id="preconnect2">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
+		id="Roboto">
+</head>
+
+<body id="body">
+
+	<div id="header">
+		<h1 id="title">Investment Calculator</h1>
+	</div>
+
+
+
+
+	<section id="main_section">
+		<section id="input_section">
+			<div id="element_8daebdfd5b274754">
+				<p id="element_0368dc1ef42a4d2d">Calculation</p><select id="calculation_type_select" class="input">
+					<option id="element_e7c2a3f04d2a4495">End Amount</option>
+					<option id="element_6cceff56758b4406">Average Contribution</option>
+					<option id="element_fbb8f750cbad4995">Return Rate</option>
+					<option id="element_7aa1db97bb1c4d8c">Starting Amount</option>
+					<option id="element_ee6f8b28124e4802">Investment Length</option>
+				</select>
+			</div>
+			<div id="main_form">
+				<p id="element_d63ea53720a94a7b">Starting Amount</p><input id="starting_amount_input" class="input"
+					value="$20,000">
+			</div>
+			<div id="element_ffa3b74a7d454892">
+				<p id="element_dda42f80114f4b20">Years</p><input id="years_input" class="input"
+					placeholder="years" value="10">
+			</div>
+			<div id="element_d35ff45ea9d64b64">
+				<p id="element_9af5b2b1e7b04a51">Return Rate</p><input id="return_rate_input" class="input"
+					value="7%">
+			</div>
+			<div id="element_2f696776d4d54f15">
+				<p id="element_428421ce4c44442a">Compound</p><select id="compound_select" class="input">
+					<option id="element_3a3a62b0bc9745d6">annually</option>
+					<option id="element_a5035ca27d934557">monthly</option>
+				</select>
+			</div>
+			<div></div>
+			<div id="element_6217b882403b4594"></div>
+			<div id="element_183c540131fa44a2">
+				<p id="element_6dcd66c32edf4c68">Contribute</p><select id="contribute_input" class="input">
+					<option id="element_2559dff06b13457f">annually</option>
+					<option id="element_f1cad8d8bf9b43af">monthly</option>
+				</select>
+			</div>
+			<div id="contribution_table_section">
+				<table id="contribution_schedule_table" class="table_cell">
+					<tr id="element_61413554c0954d23">
+						<th id="element_d2759fcf1b05432f" class="table_header">Start Period</th>
+						<th id="element_a7869b95e2cc4970" style="padding: 1rem;" class="table_header">Amount</th>
+					</tr>
+					<tbody id="contribution_schedule_body">
+						<tr id="con_schedule_row">
+							<td class="table_cell table_input_cell">
+								<input class="table_input" value="1">
+							</td>
+							<td class="table_cell table_input_cell">
+								<input class="table_input" value="$1,000">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p id="element_70d86a58ad32498f">+</p>
+			</div>
+		</section>
+		<section id="results_section">
+			<h2 id="element_991261ae5ee743dc">Results</h2>
+			<p>You'd have an end balance of $1,000 after 10 years.</p>
+			<table id="results_table">
+				<tbody>
+					<tr id="element_bf00446d90654b6b">
+						<td id="element_6065d01935a94cff">End Balance</td>
+						<td id="element_3dc24921ade447b2">$1,000</td>
+					</tr>
+					<tr id="element_ba47f496a4844036">
+						<td id="element_fc02f3786b084006">Total Contributions</td>
+						<td id="element_25f4294797034abf">$1,000</td>
+					</tr>
+					<tr id="element_497c98c3b24949e0">
+						<td id="element_c30730c548974a6c">Total Interest</td>
+						<td id="element_b73dc1e562184dbb">$1,000</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="element_0bab3ccaf87e459a" class="table_cell">
+				<tr id="element_a6b4b4fddfd34076">
+					<th id="element_00e022dcd0c24b2f" class="table_header">Year</th>
+					<th id="element_95ccd99b79344e95" style="padding: 1rem;" class="table_header">Deposit</th>
+					<th id="element_0607752994234383" class="table_header">Interest</th>
+					<th id="element_12cfbf84a34c4c43" class="table_header">Ending Balance</th>
+				</tr>
+				<tbody id="result_table_body">
+					<tr id="element_4ee12b7c59c649d8">
+						<td id="element_ca2df35ea8c34580" class="table_cell">1</td>
+						<td id="element_1905bfe8ed8c4056" class="table_cell">$1,000</td>
+						<td id="element_14056d0208494bac" class="table_cell">$1,000</td>
+						<td id="element_7097afad898e4508" class="table_cell">$1,000</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</section>
+
+
+	<!-- general -->
+	<script>
+		let calculation_type_select = document.getElementById("calculation_type_select");
+		let starting_amount_input = document.getElementById("starting_amount_input");
+		let years_input = document.getElementById("years_input");
+		let return_rate_input = document.getElementById("return_rate_input");
+		let compound_select = document.getElementById("compound_select");
+		let contribute_input = document.getElementById("contribute_input");
+		let contribution_schedule_body = document.getElementById("contribution_schedule_body");
+		let result_table_body = document.getElementById("result_table_body");
+
+	</script>
+
+	<!-- util -->
+	<script>
+		function formatCurrency(number) {
+			if (typeof number !== "number") return "";
+			// Ensure two decimals if needed
+			return "$" + number.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+		}
+
+		function parseCurrency(str) {
+			if (typeof str !== "string") return NaN;
+			// Remove $ and commas, then convert to number
+			const num = parseFloat(str.replace(/[$,]/g, ""));
+			return isNaN(num) ? 0 : num;
+		}
+	</script>
+
+
+	<script>
+		function calculate() {
+			if (calculation_type_select.value == "End Amount") {
+				let compound_period = compound_select.value == "monthly" ? 12 : 1;
+				let contribute_period = contribute_input.value == "monthly" ? 12 : 1;
+				let periods = parseInt(years_input.value) * compound_period;
+				let rate = parseFloat(return_rate_input.value.slice(0, -1)) / 100.0;
+
+				let contribution_schedule = [];
+				for (let child of contribution_schedule_body.children) {
+
+					if (child.querySelector("td")) {
+						contribution_schedule.push(
+							[parseInt(child.children[0].children[0].value), parseCurrency(child.children[1].children[0].value)]
+						);
+					}
+				}
+
+				result_table_body.replaceChildren();
+
+
+				// calculate schedule
+				let accumulation_schedule = [];
+				let interest = 0;
+				let balance = parseCurrency(starting_amount_input.value);
+				let current_contribution = contribution_schedule[0][1];
+				let contr_index = 0;
+				for (let y = 0; y < periods; y+=compound_period) {
+
+					if (y % compound_period == 0) {
+						interest = balance * rate / compound_period;
+					}
+					if (y == contribution_schedule[contr_index][0] / contribute_period) {
+						current_contribution = contribution_schedule[contr_index][1];
+						contr_index += contr_index < contribution_schedule.length-1? 1 : 0;
+					}
+
+					let contribution_amount = 0;
+					if (y % contribute_period == 0) {
+						contribution_amount = current_contribution * contribute_period / compound_period;
+					}
+
+					balance = balance + interest + contribution_amount;
+
+					accumulation_schedule[y] = [contribution_amount, interest, balance];
+
+					const tr = document.createElement("tr");
+					tr.innerHTML = `
+						<td class="table_cell">${1+y/contribute_period}</td>
+						<td class="table_cell">${formatCurrency(contribution_amount)}</td>
+						<td class="table_cell">${formatCurrency(interest)}</td>
+						<td class="table_cell">${formatCurrency(balance)}</td>
+					`;
+
+					result_table_body.appendChild(tr);
+				}
+
+
+			}
+
+		}
+
+		calculate();
+	</script>
+
+
+</body>
+
+</html>
