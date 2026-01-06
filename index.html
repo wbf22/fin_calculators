@@ -9,6 +9,18 @@
 
 
 	<style>
+		:root {
+			--background: #03191e;
+			--font_color: #c1cfda;
+			--header_color: #2f867d;
+			--input_color: #941c2f;
+			--divider: #20a4f3;
+
+			/* #333333, #643173, #7d5ba6, #86a59c, #89ce94 */
+			/* #c1cfda, #20a4f3, #59f8e8, #941c2f, #03191e */
+			
+		}
+
 		#html {
 			background-color: rgb(255, 255, 255);
 			margin: 0px;
@@ -25,8 +37,9 @@
 			padding: 0px;
 			min-height: 100vh;
 			font-family: Roboto;
-			color: rgb(136, 205, 148);
-			background-color: rgb(51, 51, 51);
+			color: var(--font_color);
+			background-color: var(--background);
+			font-size: 1.1rem;
 		}
 
 		#main_form {
@@ -66,14 +79,15 @@
 		}
 
 		.input {
-			background-color: rgb(36, 36, 36);
+			background-color: var(--input_color);
 			border: 0px;
 			border-radius: 5px;
 			color: inherit;
+			font-size: 1.1rem;
 		}
 
 		.table_input {
-			background-color: rgb(36, 36, 36);
+			background-color: var(--input_color);
 			border: 0px;
 			color: inherit;
 			width: 100%;
@@ -170,17 +184,9 @@
 			padding: 1rem;
 		}
 
-		#element_00ad17afbc5646f9 {
-			padding: 1rem;
-		}
-
-		#element_16d9d461243a401b {
-			padding: 1rem;
-		}
-
 		.table_header {
 			text-align: left;
-			background-color: rgb(99, 49, 114);
+			background-color: var(--header_color);
 			border: 1px solid;
 			margin: 0px;
 			padding: 1rem;
@@ -190,12 +196,12 @@
 			text-align: right;
 			border: 1px solid;
 			padding: 0.5rem;
+			background-color: var(--input_color);
 		}
 
 		.table_input_cell {
-			padding: 0;
+			padding: 0px;
 		}
-
 
 		#contribution_table_section {
 			display: flex;
@@ -204,7 +210,7 @@
 
 		#element_70d86a58ad32498f {
 			margin: 1rem;
-			background-color: rgb(99, 49, 114);
+			background-color: var(--header_color);
 			border: 1px solid;
 			padding: 0rem;
 			width: 2rem;
@@ -241,7 +247,7 @@
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			width: 40vw;
-			background-color: rgb(99, 49, 114);
+			background-color: var(--header_color);
 			border: 1px solid;
 		}
 
@@ -276,18 +282,6 @@
 			padding: 1rem;
 		}
 
-		#element_4ee12b7c59c649d8 {
-			padding: 1rem;
-		}
-
-		#element_ca2df35ea8c34580 {
-			padding: 1rem;
-		}
-
-		#element_1905bfe8ed8c4056 {
-			padding: 1rem;
-		}
-
 		#element_0bab3ccaf87e459a {
 			padding: 1rem;
 			width: 36vw;
@@ -301,16 +295,8 @@
 			margin: 0px;
 			height: 3.3rem;
 			line-height: 3.4rem;
-			background-color: rgb(99, 49, 114);
+			background-color: var(--header_color);
 			border: 1px solid;
-		}
-
-		#element_14056d0208494bac {
-			padding: 1rem;
-		}
-
-		#element_7097afad898e4508 {
-			padding: 1rem;
 		}
 
 		#results_table {
@@ -326,7 +312,7 @@
 			padding: 1rem;
 		}
 
-		#element_3dc24921ade447b2 {
+		#end_balance_total {
 			padding: 1rem;
 			text-align: right;
 		}
@@ -335,7 +321,7 @@
 			padding: 1rem;
 		}
 
-		#element_25f4294797034abf {
+		#contributions_total {
 			padding: 1rem;
 			text-align: right;
 		}
@@ -348,7 +334,7 @@
 			padding: 1rem;
 		}
 
-		#element_b73dc1e562184dbb {
+		#interest_total {
 			padding: 1rem;
 			text-align: right;
 		}
@@ -359,7 +345,11 @@
 
 		#element_6217b882403b4594 {
 			height: 2px;
-			background-color: rgb(135, 166, 157);
+			background-color: var(--divider);
+		}
+
+		#result_string {
+			padding: 0rem 1rem;
 		}
 
 		#title {
@@ -367,6 +357,12 @@
 			padding: 0px;
 			font-size: 3rem;
 		}
+
+		.result_text {
+			font-size: 1.2rem;
+		}
+
+
 	</style>
 	<link rel="preconnect" href="https://fonts.googleapis.com" id="preconnect1">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" id="preconnect2">
@@ -400,12 +396,11 @@
 					value="$20,000">
 			</div>
 			<div id="element_ffa3b74a7d454892">
-				<p id="element_dda42f80114f4b20">Years</p><input id="years_input" class="input"
-					placeholder="years" value="10">
+				<p id="element_dda42f80114f4b20">Years</p><input id="years_input" class="input" placeholder="years"
+					value="10">
 			</div>
 			<div id="element_d35ff45ea9d64b64">
-				<p id="element_9af5b2b1e7b04a51">Return Rate</p><input id="return_rate_input" class="input"
-					value="7%">
+				<p id="element_9af5b2b1e7b04a51">Return Rate</p><input id="return_rate_input" class="input" value="7%">
 			</div>
 			<div id="element_2f696776d4d54f15">
 				<p id="element_428421ce4c44442a">Compound</p><select id="compound_select" class="input">
@@ -423,10 +418,12 @@
 			</div>
 			<div id="contribution_table_section">
 				<table id="contribution_schedule_table" class="table_cell">
-					<tr id="element_61413554c0954d23">
-						<th id="element_d2759fcf1b05432f" class="table_header">Start Period</th>
-						<th id="element_a7869b95e2cc4970" style="padding: 1rem;" class="table_header">Amount</th>
-					</tr>
+					<tbody>
+						<tr id="element_61413554c0954d23">
+							<th id="element_d2759fcf1b05432f" class="table_header">Start Period</th>
+							<th id="element_a7869b95e2cc4970" style="padding: 1rem;" class="table_header">Amount</th>
+						</tr>
+					</tbody>
 					<tbody id="contribution_schedule_body">
 						<tr id="con_schedule_row">
 							<td class="table_cell table_input_cell">
@@ -443,36 +440,92 @@
 		</section>
 		<section id="results_section">
 			<h2 id="element_991261ae5ee743dc">Results</h2>
-			<p>You'd have an end balance of $1,000 after 10 years.</p>
+			<p id="result_string" class="result_text">You'd have an end balance of $1,000 after 10 years.</p>
 			<table id="results_table">
 				<tbody>
 					<tr id="element_bf00446d90654b6b">
-						<td id="element_6065d01935a94cff">End Balance</td>
-						<td id="element_3dc24921ade447b2">$1,000</td>
+						<td id="element_6065d01935a94cff" class="result_text"><strong>End Balance</strong></td>
+						<td id="end_balance_total" class="result_text">$53,159.48</td>
 					</tr>
 					<tr id="element_ba47f496a4844036">
-						<td id="element_fc02f3786b084006">Total Contributions</td>
-						<td id="element_25f4294797034abf">$1,000</td>
+						<td id="element_fc02f3786b084006" class="result_text">Total Contributions</td>
+						<td id="contributions_total" class="result_text">$30,000.00</td>
 					</tr>
 					<tr id="element_497c98c3b24949e0">
-						<td id="element_c30730c548974a6c">Total Interest</td>
-						<td id="element_b73dc1e562184dbb">$1,000</td>
+						<td id="element_c30730c548974a6c" class="result_text">Total Interest</td>
+						<td id="interest_total" class="result_text">$23,159.48</td>
 					</tr>
 				</tbody>
 			</table>
 			<table id="element_0bab3ccaf87e459a" class="table_cell">
-				<tr id="element_a6b4b4fddfd34076">
-					<th id="element_00e022dcd0c24b2f" class="table_header">Year</th>
-					<th id="element_95ccd99b79344e95" style="padding: 1rem;" class="table_header">Deposit</th>
-					<th id="element_0607752994234383" class="table_header">Interest</th>
-					<th id="element_12cfbf84a34c4c43" class="table_header">Ending Balance</th>
-				</tr>
+				<tbody>
+					<tr id="element_a6b4b4fddfd34076">
+						<th id="element_00e022dcd0c24b2f" class="table_header">Year</th>
+						<th id="element_95ccd99b79344e95" style="padding: 1rem;" class="table_header">Deposit</th>
+						<th id="element_0607752994234383" class="table_header">Interest</th>
+						<th id="element_12cfbf84a34c4c43" class="table_header">Ending Balance</th>
+					</tr>
+				</tbody>
 				<tbody id="result_table_body">
-					<tr id="element_4ee12b7c59c649d8">
-						<td id="element_ca2df35ea8c34580" class="table_cell">1</td>
-						<td id="element_1905bfe8ed8c4056" class="table_cell">$1,000</td>
-						<td id="element_14056d0208494bac" class="table_cell">$1,000</td>
-						<td id="element_7097afad898e4508" class="table_cell">$1,000</td>
+					<tr>
+						<td class="table_cell">1</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$1,400.00</td>
+						<td class="table_cell">$22,400.00</td>
+					</tr>
+					<tr>
+						<td class="table_cell">2</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$1,568.00</td>
+						<td class="table_cell">$24,968.00</td>
+					</tr>
+					<tr>
+						<td class="table_cell">3</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$1,747.76</td>
+						<td class="table_cell">$27,715.76</td>
+					</tr>
+					<tr>
+						<td class="table_cell">4</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$1,940.10</td>
+						<td class="table_cell">$30,655.86</td>
+					</tr>
+					<tr>
+						<td class="table_cell">5</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$2,145.91</td>
+						<td class="table_cell">$33,801.77</td>
+					</tr>
+					<tr>
+						<td class="table_cell">6</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$2,366.12</td>
+						<td class="table_cell">$37,167.90</td>
+					</tr>
+					<tr>
+						<td class="table_cell">7</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$2,601.75</td>
+						<td class="table_cell">$40,769.65</td>
+					</tr>
+					<tr>
+						<td class="table_cell">8</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$2,853.88</td>
+						<td class="table_cell">$44,623.53</td>
+					</tr>
+					<tr>
+						<td class="table_cell">9</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$3,123.65</td>
+						<td class="table_cell">$48,747.17</td>
+					</tr>
+					<tr>
+						<td class="table_cell">10</td>
+						<td class="table_cell">$1,000.00</td>
+						<td class="table_cell">$3,412.30</td>
+						<td class="table_cell">$53,159.48</td>
 					</tr>
 				</tbody>
 			</table>
@@ -490,6 +543,36 @@
 		let contribute_input = document.getElementById("contribute_input");
 		let contribution_schedule_body = document.getElementById("contribution_schedule_body");
 		let result_table_body = document.getElementById("result_table_body");
+		let end_balance_total = document.getElementById("end_balance_total");
+		let contributions_total = document.getElementById("contributions_total");
+		let interest_total = document.getElementById("interest_total");
+		let result_string = document.getElementById("result_string");
+
+		calculation_type_select.addEventListener("change", () => {
+			calculate();
+		});
+		starting_amount_input.addEventListener("change", () => {
+			if (!starting_amount_input.value) starting_amount_input.value = "20000";
+			let num = parseCurrency(starting_amount_input.value);
+			starting_amount_input.value = formatCurrency(num);
+			calculate();
+		});
+		years_input.addEventListener("change", () => {
+			if (!years_input.value) years_input.value = "0";
+			calculate();
+		});
+		return_rate_input.addEventListener("change", () => {
+			if (!return_rate_input.value) return_rate_input.value = "7%";
+			let percent = return_rate_input.value.replace(/[%]/g, "");
+			return_rate_input.value = percent + "%";
+			calculate();
+		});
+		compound_select.addEventListener("change", () => {
+			calculate();
+		});
+		contribute_input.addEventListener("change", () => {
+			calculate();
+		});
 
 	</script>
 
@@ -510,12 +593,15 @@
 	</script>
 
 
+	<!-- calculations -->
 	<script>
+
+
 		function calculate() {
 			if (calculation_type_select.value == "End Amount") {
-				let compound_period = compound_select.value == "monthly" ? 12 : 1;
-				let contribute_period = contribute_input.value == "monthly" ? 12 : 1;
-				let periods = parseInt(years_input.value) * compound_period;
+				let compound_period = compound_select.value == "monthly" ? 1 : 12;
+				let contribute_period = contribute_input.value == "monthly" ? 1 : 12;
+				let periods = parseInt(years_input.value) * 12;
 				let rate = parseFloat(return_rate_input.value.slice(0, -1)) / 100.0;
 
 				let contribution_schedule = [];
@@ -537,43 +623,85 @@
 				let balance = parseCurrency(starting_amount_input.value);
 				let current_contribution = contribution_schedule[0][1];
 				let contr_index = 0;
-				for (let y = 0; y < periods; y+=compound_period) {
+				let last_compounded_balance = balance;
+				let year_interest = 0;
+				let year_contributions = 0;
+				for (let m = 1; m < periods + 1; m++) {
 
-					if (y % compound_period == 0) {
-						interest = balance * rate / compound_period;
-					}
-					if (y == contribution_schedule[contr_index][0] / contribute_period) {
+					// follow contribution schedule
+					if (m == contribution_schedule[contr_index][0] / contribute_period) {
 						current_contribution = contribution_schedule[contr_index][1];
-						contr_index += contr_index < contribution_schedule.length-1? 1 : 0;
+						contr_index += contr_index < contribution_schedule.length - 1 ? 1 : 0;
 					}
 
+					// calculate contributions
+					let interest = 0;
 					let contribution_amount = 0;
-					if (y % contribute_period == 0) {
-						contribution_amount = current_contribution * contribute_period / compound_period;
+					if (contribute_input.value == "monthly") {
+						contribution_amount = current_contribution;
+					}
+					else if (m % 12 == 0) {
+						contribution_amount = current_contribution;
 					}
 
+					// calculate interest
+					if (compound_select.value == "monthly") {
+						interest = balance * rate / 12;
+						year_interest += interest;
+					}
+					else {
+						if (m % 12 == 0) {
+							let interest_on_contributions = year_contributions * 0.5 * rate;
+							interest = interest_on_contributions + last_compounded_balance * rate;
+							last_compounded_balance = balance + interest + contribution_amount;
+							year_interest = interest;
+						}
+					}
+					year_contributions += contribution_amount;
+
+					// calculate new balance
 					balance = balance + interest + contribution_amount;
+					accumulation_schedule[m] = [contribution_amount, interest, balance];
 
-					accumulation_schedule[y] = [contribution_amount, interest, balance];
+					// add to table
+					if (m % 12 == 0) {
+						const tr = document.createElement("tr");
+						tr.innerHTML = `
+							<td class="table_cell">${m / 12}</td>
+							<td class="table_cell">${formatCurrency(year_contributions)}</td>
+							<td class="table_cell">${formatCurrency(year_interest)}</td>
+							<td class="table_cell">${formatCurrency(balance)}</td>
+						`;
 
-					const tr = document.createElement("tr");
-					tr.innerHTML = `
-						<td class="table_cell">${1+y/contribute_period}</td>
-						<td class="table_cell">${formatCurrency(contribution_amount)}</td>
-						<td class="table_cell">${formatCurrency(interest)}</td>
-						<td class="table_cell">${formatCurrency(balance)}</td>
-					`;
-
-					result_table_body.appendChild(tr);
+						result_table_body.appendChild(tr);
+						year_interest = 0;
+						year_contributions = 0;
+					}
 				}
 
 
+				// set result totals
+				let end_balance_formatted = formatCurrency(accumulation_schedule[accumulation_schedule.length - 1][2]);
+				end_balance_total.innerHTML = `<strong>${end_balance_formatted}</strong>`;
+				let total_contributions = 0;
+				let total_interest = 0;
+				for (let m = 1; m < accumulation_schedule.length; m++) {
+					total_contributions += accumulation_schedule[m][0];
+					total_interest += accumulation_schedule[m][1];
+				}
+				contributions_total.textContent = formatCurrency(total_contributions + parseCurrency(starting_amount_input.value));
+				interest_total.textContent = formatCurrency(total_interest);
+				result_string.innerHTML = `You'd have an end balance of <span style="color: var(--divider)">${end_balance_formatted}</span> in ${years_input.value} years`;
 			}
 
 		}
 
 		calculate();
 	</script>
+
+
+
+
 
 
 </body>

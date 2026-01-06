@@ -1,3 +1,11 @@
-#333333, #643173, #7d5ba6, #86a59c, #89ce94
 
+
+
+Plans
+- Basic investment calculator with contribution schedules
+- Loan/Mortgage Calculator
+- Plan Calculator allowing you to combine loans and investments
+- Graph
+- Worse Case and Best case for investments
+- Contribution Schedule Generation
 
