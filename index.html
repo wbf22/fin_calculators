@@ -15,10 +15,6 @@
 			--header_color: #2f867d;
 			--input_color: #941c2f;
 			--divider: #20a4f3;
-
-			/* #333333, #643173, #7d5ba6, #86a59c, #89ce94 */
-			/* #c1cfda, #20a4f3, #59f8e8, #941c2f, #03191e */
-			
 		}
 
 		#html {
@@ -362,7 +358,166 @@
 			font-size: 1.2rem;
 		}
 
+		#element_3af478648e8c4def {
+			padding: 1rem;
+		}
 
+		#element_9bf22235ad2c4965 {
+			padding: 1rem;
+		}
+
+		#element_004122e17681484b {
+			padding: 1rem;
+		}
+
+		#download_section {
+			display: flex;
+			justify-content: end;
+			align-items: center;
+		}
+
+		#element_0adfe3dacb6b4e2e {
+			padding: 1rem;
+		}
+
+		#upload_section {
+			display: flex;
+			justify-content: right;
+			align-items: center;
+		}
+
+		#upload_dialog {
+			z-index: 100;
+			position: fixed;
+			top: 40%;
+			left: 40%;
+			background-color: var(--background);
+			padding: 3rem;
+			display: none;
+		}
+
+		#element_b4503eeb9cfb4c48 {
+			padding: 1rem;
+			border-collapse: collapse;
+		}
+
+		#element_3cbabec052554233 {
+			padding: 1rem;
+		}
+
+		#element_1bbfb817e468459d {
+			padding: 1rem;
+		}
+
+		#element_0fa3ad09b70a4691 {
+			padding: 1rem;
+		}
+
+		#element_ad732bc9bd134c4b {
+			padding: 1rem;
+		}
+
+		#element_d5fc85308d704423 {
+			padding: 1rem;
+		}
+
+		#element_dff922823fbe42e9 {
+			padding: 1rem;
+		}
+
+		#element_fddba7637f054962 {
+			padding: 1rem;
+		}
+
+		#element_358e279004ee4d48 {
+			padding: 1rem;
+		}
+
+		#element_df8b6cbfb35549d5 {
+			padding: 1rem;
+		}
+
+		#element_8c9bec85b61f4072 {
+			padding: 1rem;
+		}
+
+		#element_61ece5abba5442dd {
+			padding: 1rem;
+		}
+
+		#element_cfbdda8057e04173 {
+			padding: 1rem;
+		}
+
+		.column_select {
+			background-color: inherit;
+			color: inherit;
+			border: 0px;
+			cursor: pointer;
+		}
+
+		#element_930b386ef3a44024 {
+			padding: 1rem;
+		}
+
+		#element_5d4f66aae1794419 {
+			padding: 1rem;
+		}
+
+		#element_9b2eee3d9e9640f8 {
+			padding: 1rem;
+		}
+
+		#element_d3007fa967dc4595 {
+			padding: 1rem;
+		}
+
+		#element_0f0d55edcdee41b3 {
+			padding: 1rem;
+		}
+
+		#element_a5369b5a57734112 {
+			padding: 1rem;
+		}
+
+		#element_b458f2e109bd487b {
+			padding: 1rem;
+		}
+
+		#element_3a863eb35f394d35 {
+			padding: 1rem;
+		}
+
+		#element_873745b17a7b4176 {
+			padding: 1rem;
+		}
+
+		#element_759f5542ad4146c1 {
+			padding: 1rem;
+		}
+
+		#element_2e252f9278724cff {
+			padding: 1rem;
+		}
+
+		#element_07cdf21ae9724af9 {
+			padding: 0.4rem;
+			background-color: var(--header_color);
+			border: 1px solid;
+			color: inherit;
+			border-radius: 2px;
+			cursor: pointer;
+		}
+
+		#element_07cdf21ae9724af9:hover {
+			cursor: pointer;
+		}
+
+
+
+		.up_download_svg {
+			cursor: pointer;
+		}
 	</style>
 	<link rel="preconnect" href="https://fonts.googleapis.com" id="preconnect1">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" id="preconnect2">
@@ -376,9 +531,6 @@
 	<div id="header">
 		<h1 id="title">Investment Calculator</h1>
 	</div>
-
-
-
 
 	<section id="main_section">
 		<section id="input_section">
@@ -416,6 +568,15 @@
 					<option id="element_f1cad8d8bf9b43af">monthly</option>
 				</select>
 			</div>
+			<div id="upload_section">
+				<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor"
+					class="up_download_svg bi bi-file-arrow-up-fill" viewBox="0 0 16 16">
+					<path
+						d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M7.5 6.707 6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0z"
+						id="element_9bf22235ad2c4965"></path>
+				</svg>
+				<div id="element_3af478648e8c4def">upload csv</div>
+			</div>
 			<div id="contribution_table_section">
 				<table id="contribution_schedule_table" class="table_cell">
 					<tbody>
@@ -440,12 +601,13 @@
 		</section>
 		<section id="results_section">
 			<h2 id="element_991261ae5ee743dc">Results</h2>
-			<p id="result_string" class="result_text">You'd have an end balance of $1,000 after 10 years.</p>
+			<p id="result_string" class="result_text">You'd have an end balance of <span
+					style="color: var(--divider)">$53,159.48</span> in 10 years</p>
 			<table id="results_table">
 				<tbody>
 					<tr id="element_bf00446d90654b6b">
 						<td id="element_6065d01935a94cff" class="result_text"><strong>End Balance</strong></td>
-						<td id="end_balance_total" class="result_text">$53,159.48</td>
+						<td id="end_balance_total" class="result_text"><strong>$53,159.48</strong></td>
 					</tr>
 					<tr id="element_ba47f496a4844036">
 						<td id="element_fc02f3786b084006" class="result_text">Total Contributions</td>
@@ -457,8 +619,19 @@
 					</tr>
 				</tbody>
 			</table>
+
+			<div id="download_section">
+				<svg id="download_svg" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor"
+					class="up_download_svg bi bi-file-arrow-down-fill" viewBox="0 0 16 16" onclick="download()">
+					<path
+						d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5"
+						id="element_004122e17681484b">
+					</path>
+				</svg>
+				<p id="element_0adfe3dacb6b4e2e">download as csv</p>
+			</div>
 			<table id="element_0bab3ccaf87e459a" class="table_cell">
-				<tbody>
+				<tbody id="element_478e14e0ac514ab3">
 					<tr id="element_a6b4b4fddfd34076">
 						<th id="element_00e022dcd0c24b2f" class="table_header">Year</th>
 						<th id="element_95ccd99b79344e95" style="padding: 1rem;" class="table_header">Deposit</th>
@@ -532,9 +705,56 @@
 		</section>
 	</section>
 
+	<div id="upload_dialog" class="">
+
+		<h1 id="element_2c4889861b884014">Csv Import</h1>
+		<p id="element_8c9bec85b61f4072">Select the columns to use for start period and amount</p>
+		<button id="element_07cdf21ae9724af9">Done</button>
+		<table id="element_b4503eeb9cfb4c48">
+			<tbody id="element_3cbabec052554233">
+				<tr id="element_cfbdda8057e04173">
+					<td id="element_61ece5abba5442dd" class="">
+						<select id="element_6fe15f6703c64043" class="column_select">
+							<option id="element_9b2eee3d9e9640f8"></option>
+							<option id="element_930b386ef3a44024">Start Period</option>
+							<option id="element_5d4f66aae1794419">Amount</option>
+						</select>
+					</td>
+
+
+					<td id="element_b458f2e109bd487b" class="">
+						<select id="element_882aa63ae5124a7a" class="column_select">
+							<option id="element_d3007fa967dc4595"></option>
+							<option id="element_0f0d55edcdee41b3">Start Period</option>
+							<option id="element_a5369b5a57734112">Amount</option>
+						</select>
+					</td>
+					<td id="element_2e252f9278724cff" class="">
+						<select id="element_98fa88fc9a1d4781" class="column_select">
+							<option id="element_3a863eb35f394d35"></option>
+							<option id="element_873745b17a7b4176">Start Period</option>
+							<option id="element_759f5542ad4146c1">Amount</option>
+						</select>
+					</td>
+				</tr>
+				<tr id="element_1bbfb817e468459d">
+					<th id="element_0fa3ad09b70a4691" class="table_header">column 1</th>
+					<th id="element_ad732bc9bd134c4b" class="table_header">column 2</th>
+					<th id="element_d5fc85308d704423" class="table_header">column 3</th>
+				</tr>
+				<tr id="element_dff922823fbe42e9">
+					<td id="element_fddba7637f054962" class="table_cell">value</td>
+					<td id="element_358e279004ee4d48" class="table_cell">value</td>
+					<td id="element_df8b6cbfb35549d5" class="table_cell">value</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
 
 	<!-- general -->
 	<script>
+		let table_values = [];
 		let calculation_type_select = document.getElementById("calculation_type_select");
 		let starting_amount_input = document.getElementById("starting_amount_input");
 		let years_input = document.getElementById("years_input");
@@ -547,6 +767,7 @@
 		let contributions_total = document.getElementById("contributions_total");
 		let interest_total = document.getElementById("interest_total");
 		let result_string = document.getElementById("result_string");
+		let contribution_schedule_table = document.getElementById("contribution_schedule_table");
 
 		calculation_type_select.addEventListener("change", () => {
 			calculate();
@@ -573,6 +794,12 @@
 		contribute_input.addEventListener("change", () => {
 			calculate();
 		});
+		contribution_schedule_table.addEventListener("change", (e) => {
+			if (e.target.tagName == "INPUT") {
+				e.target.value = formatCurrency(parseFloat(e.target.value));
+			}
+			calculate();
+		});
 
 	</script>
 
@@ -592,6 +819,37 @@
 		}
 	</script>
 
+	<!-- upload download -->
+	<script>
+
+		function download() {
+			let csv = ["Year,Deposit,Interest,Ending Balance\n"];
+			for (let m = 0; m < table_values.length; m++) {
+				let [year, deposit, interest, ending_balance] = table_values[m];
+				csv.push(year);
+				csv.push(",");
+				csv.push(deposit);
+				csv.push(",");
+				csv.push(interest);
+				csv.push(",");
+				csv.push(ending_balance);
+				csv.push("\n");
+			}
+
+			let csv_str = csv.join("");
+
+			const blob = new Blob([csv_str], { type: "text/csv;charset=utf-8;" });
+			const url = URL.createObjectURL(blob);
+
+			const a = document.createElement("a");
+			a.href = url;
+			a.download = "investment.csv";
+			a.click();
+
+			URL.revokeObjectURL(url);
+		}
+
+	</script>
 
 	<!-- calculations -->
 	<script>
@@ -618,6 +876,7 @@
 
 
 				// calculate schedule
+				table_values = [];
 				let accumulation_schedule = [];
 				let interest = 0;
 				let balance = parseCurrency(starting_amount_input.value);
@@ -672,10 +931,12 @@
 							<td class="table_cell">${formatCurrency(year_interest)}</td>
 							<td class="table_cell">${formatCurrency(balance)}</td>
 						`;
+						table_values.push([m / 12, year_contributions, year_interest, balance]);
 
 						result_table_body.appendChild(tr);
 						year_interest = 0;
 						year_contributions = 0;
+
 					}
 				}
 
